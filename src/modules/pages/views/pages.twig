@@ -1,0 +1,39 @@
+{% extends 'layout.twig' %}
+
+{% block Content %}
+    <ol class="breadcrumb page-breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">Dashboard</li>
+    </ol>
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-4 text-xs-center text-md-left text-nowrap">
+                <h1><i class="page-header-icon ion-document-text"></i>Pages</h1>
+            </div>
+
+            <hr class="page-wide-block visible-xs visible-sm">
+
+            <div class="col-xs-12 width-md-auto width-lg-auto width-xl-auto pull-md-right">
+                <a href="#" class="btn btn-primary btn-block"><span class="btn-label-icon left ion-plus-round"></span>Add page</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-wide-block">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="panel">
+                    <div class="panel-heading">
+                        Beschikbare pagina's
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Home</li>
+                        <li class="list-group-item">Blog</li>
+                        <li class="list-group-item">Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'layout.twig' %}
+
+{% block Content %}
+    <ol class="breadcrumb page-breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">Dashboard</li>
+    </ol>
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-4 text-xs-center text-md-left text-nowrap">
+                <h1><i class="page-header-icon ion-ios-pulse-strong"></i>Dashboard</h1>
+            </div>
+
+            <hr class="page-wide-block visible-xs visible-sm">
+
+            <div class="col-xs-12 width-md-auto width-lg-auto width-xl-auto pull-md-right">
+                <a href="#" class="btn btn-primary btn-block"><span class="btn-label-icon left ion-plus-round"></span>Create project</a>
+            </div>
+
+            <!-- Spacer -->
+            <div class="m-b-2 visible-xs visible-sm clearfix"></div>
+
+            <form action="" class="page-header-form col-xs-12 col-md-4 pull-md-right">
+                <div class="input-group">
+                    <span class="input-group-addon b-a-0 font-size-16"><i class="ion-search"></i></span>
+                    <input type="text" placeholder="Search..." class="form-control p-l-0 b-a-0">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title">Group</div>
+                </div>
+                <form class="panel-body">
+                    <fieldset>
+                        <legend>Database</legend>
+                        <div class="form-group">
+                            <label for="form-group-input-1">Location</label>
+                            <input type="text" class="form-control" id="form-group-input-1" placeholder="Example input">
+                            <small class="text-muted">The IP address of your database server</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-group-input-2">Name</label>
+                            <input type="text" class="form-control" id="form-group-input-2" placeholder="Another input">
+                            <small class="text-muted">The name of the database to connect to</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-group-input-2">Username</label>
+                            <input type="text" class="form-control" id="form-group-input-2" placeholder="Another input">
+                            <small class="text-muted">The database user to connect with</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-group-input-2">Password</label>
+                            <input type="password" class="form-control" id="form-group-input-2" placeholder="Another input">
+                            <small class="text-muted">The password of the database user</small>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Datum/tijd</legend>
+                        <div class="form-group">
+                            <label for="form-group-input-1">Datum & tijd</label>
+                            <input type="text" class="form-control" id="form-group-input-1" value="d/m/Y (H:i)">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-group-input-1">Datum</label>
+                            <input type="text" class="form-control" id="form-group-input-1" value="d/m/Y">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-group-input-1">Tijd</label>
+                            <input type="text" class="form-control" id="form-group-input-1" value="H:i">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

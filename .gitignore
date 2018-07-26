@@ -1,0 +1,8 @@
+.env
+.idea
+.cache
+.project
+.settings
+.buildpath
+/cache/*
+/vendor/*
