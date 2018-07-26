@@ -4,5 +4,8 @@
 .project
 .settings
 .buildpath
+*.db
+*.DS_Store
+package-lock.json
 /cache/*
 /vendor/*
