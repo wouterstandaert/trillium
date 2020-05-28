@@ -35,4 +35,11 @@ class DashboardController extends BaseController
         // Display the website
         $this->render();
     }
+
+
+    public function handleConfig()
+    {
+        var_dump($_POST);
+        die();
+    }
 }

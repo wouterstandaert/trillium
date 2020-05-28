@@ -12,27 +12,20 @@ class ProductController extends BaseController
 
     public function showProducts()
     {
-        // @todo: move this to the user model
-
-        $products = [
-            [
-                'id' => 1,
-                'model' => 'Macbook Pro 13"',
-                'name' => 'Macbook Pro 13"',
-                'price' => '€ 1299,95'
-            ],
-            [
-                'id' => 2,
-                'model' => 'iPod mini 64gb',
-                'name' => 'iPod mini 64gb',
-                'price' => '€ 299,95'
-            ]
-        ];
+        $products = \App\Models\Product::all();
 
         // Assign the available products
         $this->assign('products', $products);
 
         // Display the website
+        $this->render();
+    }
+
+
+    public function showProduct()
+    {
+        $this->setView('product');
+
         $this->render();
     }
 
@@ -50,9 +43,20 @@ class ProductController extends BaseController
 
     public function showModels()
     {
-        // @todo: get the active user
+        $this->setView('models');
 
+        $productModels = \App\Models\ProductModel::all();
+
+        $this->assign('product_models', $productModels);
         // Display the website
         $this->render();
+    }
+
+
+    public function handleProduct()
+    {
+        //var_dump($_POST);
+
+        header("location: /products");
     }
 }

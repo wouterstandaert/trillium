@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Extensions;
 use Dotenv\Dotenv;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 class BaseController
 {
@@ -90,6 +91,22 @@ class BaseController
         //var_dump(getenv('DB_NAME'));
         //var_dump(getenv('DB_USERNAME'));
         //var_dump(getenv('DB_PASSWORD'));
+
+        $capsule = new Capsule();
+
+        $capsule->addConnection([
+            'driver' => 'mysql',
+            'host' => getenv('DB_HOST'),
+            'database' => getenv('DB_NAME'),
+            'username' => getenv('DB_USERNAME'),
+            'password' => getenv('DB_PASSWORD'),
+            'charset' => getenv('DB_CHARSET'),
+            'collation' => 'utf8_general_ci',
+            'prefix' => ''
+        ]);
+
+        $capsule->setAsGlobal();
+        $capsule->bootEloquent();
     }
 
 
@@ -115,6 +132,7 @@ class BaseController
         // Enable debug mode
         $this->twig->addExtension(new \Twig_Extension_Debug());
         //$this->twig->addExtension(new \App\Extensions\TranslationExtension());
+        $this->twig->getExtension('Twig_Extension_Core')->setDateFormat('d/m/Y H:i', '%d days');
     }
 
 
@@ -155,6 +173,18 @@ class BaseController
                         'class' => ''
                     ]
                 ]
+            ],
+            [
+                'url' => '/customers',
+                'name' => 'Customers',
+                'icon' => 'ion-ios-people',
+                'class' => ''
+            ],
+            [
+                'url' => '/projects',
+                'name' => 'Projects',
+                'icon' => 'ion-android-clipboard',
+                'class' => ''
             ],
             [
                 'url' => '/users',

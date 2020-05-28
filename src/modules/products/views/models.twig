@@ -2,6 +2,58 @@
 
 {% block Content %}
 
-    <h1>Models</h1>
+    <ol class="breadcrumb page-breadcrumb">
+        <li><a href="/products">Products</a></li>
+        <li class="active">Models</li>
+    </ol>
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-4 text-xs-center text-md-left text-nowrap">
+                <h1>Categories</h1>
+            </div>
+
+            <hr class="page-wide-block visible-xs visible-sm">
+
+            <div class="col-xs-12 width-md-auto width-lg-auto width-xl-auto pull-md-right">
+                <a href="/products" class="btn btn-secondary btn-block">
+                    Back
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="panel-title">Product models</div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Model</th>
+                    <th>Code</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for model in product_models %}
+                    <tr>
+                        <th scope="row">{{ model.id }}</th>
+                        <td>{{ model.translations.name }}</td>
+                        <td>{{ model.article_number }}</td>
+                        <td>{{ model.updated_at|date }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="100%"></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 
 {% endblock %}

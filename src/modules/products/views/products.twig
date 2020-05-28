@@ -3,20 +3,21 @@
 {% block Content %}
 
     <ol class="breadcrumb page-breadcrumb">
-        <li><a href="index.html">Home</a></li>
         <li class="active">Products</li>
     </ol>
 
     <div class="page-header">
         <div class="row">
             <div class="col-md-4 text-xs-center text-md-left text-nowrap">
-                <h1><i class="page-header-icon ion-ios-pulse-strong"></i>Products</h1>
+                <h1>Products</h1>
             </div>
 
             <hr class="page-wide-block visible-xs visible-sm">
 
             <div class="col-xs-12 width-md-auto width-lg-auto width-xl-auto pull-md-right">
-                <a href="#" class="btn btn-primary btn-block"><span class="btn-label-icon left ion-plus-round"></span>Add product</a>
+                <a href="/products/product" class="btn btn-primary btn-block">
+                    <span class="btn-label-icon left ion-plus-round"></span>Add product
+                </a>
             </div>
         </div>
     </div>
@@ -30,18 +31,22 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Product name</th>
                         <th>Model</th>
-                        <th>Name</th>
+                        <th>Model number</th>
                         <th>Price</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for product in products %}
                         <tr>
                             <th scope="row">{{ product.id }}</th>
-                            <td>{{ product.model }}</td>
-                            <td>{{ product.name }}</td>
+                            <td>{{ product.translations.name }}</td>
+                            <td>{{ product.model.translations.name }}</td>
+                            <td>{{ product.model.article_number }}</td>
                             <td>{{ product.price }}</td>
+                            <td>{{ product.updated_at|date }}</td>
                         </tr>
                     {% else %}
                         <tr>
