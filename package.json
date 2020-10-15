@@ -1,0 +1,22 @@
+{
+  "name": "trillium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wouterstandaert/trillium.git"
+  },
+  "author": "Wouter Standaert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wouterstandaert/trillium/issues"
+  },
+  "homepage": "https://github.com/wouterstandaert/trillium#readme",
+  "dependencies": {
+    "autobahn": "^20.9.2"
+  }
+}

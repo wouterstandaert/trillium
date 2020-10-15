@@ -1,12 +1,12 @@
-.env
+files/
+cache/
+vendor/
+node_modules/
 .idea
+.env
 .cache
 .project
 .settings
 .buildpath
 *.db
 *.DS_Store
-package-lock.json
-/files/*
-/cache/*
-/vendor/*
